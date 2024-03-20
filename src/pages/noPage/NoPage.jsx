@@ -1,8 +1,9 @@
-
 const NoPage = () => {
   return (
-    <div>NoPage</div>
-  )
+      <div>
+          No Page
+      </div>
+  );
 }
 
-export default NoPage
+export default NoPage;

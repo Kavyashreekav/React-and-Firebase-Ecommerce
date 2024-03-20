@@ -1,3 +1,4 @@
+
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import ProductDetail from '../../components/admin/ProductDetail';
 import OrderDetail from '../../components/admin/OrderDetail';
@@ -144,7 +145,7 @@ const AdminDashboard = () => {
 
                                     </div>
                                     <h2 className="title-font font-medium text-3xl text-pink-400 fonts1" >{getAllUser.length}</h2>
-                                    <p className=" text-pink-500  font-bold" >Total Order</p>
+                                    <p className=" text-pink-500  font-bold" >Total User</p>
                                 </div>
                             </Tab>
                         </TabList>

@@ -1,6 +1,6 @@
 const Loader = () => {
     return (
-        <div role="status" className=" absolute">
+        <div role="status" className=" absolute ">
             <svg
                 aria-hidden="true"
                 className="w-8 h-8 mr-2 text-pink-200 animate-spin fill-pink-500"

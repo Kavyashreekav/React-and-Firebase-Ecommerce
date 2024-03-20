@@ -1,17 +1,17 @@
-import Footer from "../footer/Footer"
-import Navbar from "../navbar/Navbar"
+import Footer from "../footer/Footer";
+import Navbar from "../navbar/Navbar";
 
-
-const layout = ({children}) => {
-  return (
-    <div>
-       <Navbar/>
-       <div className="main-content min-h-screen">
-        {children}
-       </div>
-       <Footer/>
-    </div>
-  )
+/* eslint-disable react/prop-types */
+const Layout = ({ children }) => {
+    return (
+        <div>
+            <Navbar />
+            <div className="main-content min-h-screen">
+                {children}
+            </div>
+            <Footer />
+        </div>
+    );
 }
 
-export default layout
+export default Layout;

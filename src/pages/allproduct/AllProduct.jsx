@@ -1,3 +1,4 @@
+
 import { useNavigate } from "react-router";
 import Layout from "../../components/layout/Layout";
 import { useContext, useEffect } from "react";
@@ -5,13 +6,14 @@ import myContext from "../../context/myContext";
 import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import { addToCart, deleteFromCart } from "../../redux/cartSlice";
+import Loader from "../../components/loader/Loader";
 
 
 const AllProduct = () => {
     const navigate = useNavigate();
 
     const context = useContext(myContext);
-    const {getAllProduct} = context;
+    const {loading,getAllProduct} = context;
 
     const cartItems = useSelector((state) => state.cart);
     const dispatch = useDispatch();
@@ -43,6 +45,9 @@ const AllProduct = () => {
             {/* main  */}
             <section className="text-gray-600 body-font">
                 <div className="container px-5 lg:px-0 py-5 mx-auto">
+                <div className="flex justify-center">
+                            {loading && <Loader/>}
+                        </div>
                     <div className="flex flex-wrap -m-4">
                     {getAllProduct.map((item, index) => {
                             const { id, title, price, productImageUrl } = item
@@ -74,7 +79,7 @@ const AllProduct = () => {
                                                 <button
                                                     onClick={() => deleteCart(item)}
                                                     className=" bg-red-700 hover:bg-pink-600 w-full text-white py-[4px] rounded-lg font-bold">
-                                                    Delete To Cart
+                                                    Delete From Cart
                                                 </button>
 
                                                 : 

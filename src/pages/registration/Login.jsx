@@ -67,6 +67,7 @@ const Login = () => {
             setLoading(false);
             toast.error("Login Failed");
         }
+
     }
     return (
         <div className='flex justify-center items-center h-screen'>

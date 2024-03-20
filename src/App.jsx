@@ -1,3 +1,4 @@
+
 import {
   BrowserRouter as Router,
   Route,
@@ -16,10 +17,10 @@ import AddProductPage from "./pages/admin/AddProductPage";
 import UpdateProductPage from "./pages/admin/UpdateProductPage";
 import MyState from "./context/myState";
 import { Toaster } from "react-hot-toast";
-import AllProduct from './pages/allproduct/AllProduct';
-import { ProtectedRouteForUser } from "./ProtectorRoute/ProtectorRouteFoeUser";
-import { ProtectedRouteForAdmin } from "./ProtectorRoute/ProtectorRouteForAdmin";
 import CategoryPage from "./pages/category/CategoryPage";
+import AllProduct from './pages/allproduct/AllProduct';
+import { ProtectedRouteForUser } from './ProtectorRoute/ProtectorRouteFoeUser';
+import { ProtectedRouteForAdmin } from './ProtectorRoute/ProtectorRouteForAdmin';
 
 const App = () => {
   return (
@@ -31,11 +32,10 @@ const App = () => {
           <Route path="/*" element={<NoPage />} />
           <Route path="/productinfo/:id" element={<ProductInfo />} />
           <Route path="/cart" element={<CartPage />} />
-          <Route path="/allproduct" element={<AllProduct/>} />
+          <Route path="/allproduct" element={<AllProduct />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/category/:categoryname" element={<CategoryPage/>}/>
-
+          <Route path="/category/:categoryname" element={<CategoryPage />} />  {/* category Page route  */}
           <Route path="/user-dashboard" element={
             <ProtectedRouteForUser>
               <UserDashboard />

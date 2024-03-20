@@ -96,9 +96,11 @@ const UserDashboard = () => {
                                                             </div>
 
                                                             <div className="mb-4">
-                                                                <div className="text-sm font-semibold">Order Status</div>                              
-                                                                  <div className="text-sm font-medium text-green-800 first-letter:uppercase">{status}</div>
-                                                               
+                                                                <div className="text-sm font-semibold">Order Status</div>
+                                                                {status === 'pending' ?
+                                                                    <div className="text-sm font-medium text-red-800 first-letter:uppercase">{status}</div>
+                                                                    : <div className="text-sm font-medium text-green-800 first-letter:uppercase">{status}</div>
+                                                                }
                                                             </div>
                                                         </div>
                                                     </div>

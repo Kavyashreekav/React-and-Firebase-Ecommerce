@@ -62,7 +62,6 @@ const UpdateProductPage = () => {
 
     // Get Single Product Function
     const getSingleProductFunction = async () => {
-        setLoading(true);
         try {
             const productTemp = await getDoc(doc(fireDB, "products", id))
             //   console.log(product.data())
@@ -77,8 +76,6 @@ const UpdateProductPage = () => {
                 time: product?.time,
                 date: product?.date
             })
-            setLoading(false);
-
         } catch (error) {
             console.log(error);
             setLoading(false);

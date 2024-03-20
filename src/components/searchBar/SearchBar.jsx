@@ -33,8 +33,7 @@ const SearchBar = () => {
                         <>
                             {filterSearchData.map((item, index) => {
                                 return (
-                                    <div key={index} className="py-2 px-2 cursor-pointer" 
-                                    onClick={() => navigate(`/productinfo/${item.id}`)}>
+                                    <div key={index} className="py-2 px-2 cursor-pointer" onClick={() => navigate(`/productinfo/${item.id}`)}>
                                         <div className="flex items-center gap-2">
                                             <img className="w-10" src={item.productImageUrl} alt="" />
                                             {item.title}

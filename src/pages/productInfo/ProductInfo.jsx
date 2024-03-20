@@ -14,11 +14,11 @@ const ProductInfo = () => {
     const { loading, setLoading } = context;
 
     const [product, setProduct] = useState('')
-    console.log(product)
+    // console.log(product)
 
     const { id } = useParams()
 
-    console.log(product)
+    // console.log(product)
 
     // getProductData
     const getProductData = async () => {
@@ -57,6 +57,7 @@ const ProductInfo = () => {
 
     useEffect(() => {
         getProductData()
+
     }, [])
     return (
         <Layout>
@@ -179,13 +180,6 @@ const ProductInfo = () => {
                                                     Add to cart
                                                 </button>
                                             }
-                                        </div>
-                                        <div className="flex gap-4 mb-6">
-                                            <button
-                                                className="w-full px-4 py-3 text-center text-gray-100 bg-pink-600 border border-transparent dark:border-gray-700 hover:border-pink-500 hover:text-pink-700 hover:bg-pink-100 rounded-xl"
-                                            >
-                                                Buy now
-                                            </button>
                                         </div>
                                     </div>
                                 </div>

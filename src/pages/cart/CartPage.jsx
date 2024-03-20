@@ -4,11 +4,10 @@ import { Trash } from 'lucide-react'
 import { decrementQuantity, deleteFromCart, incrementQuantity } from "../../redux/cartSlice";
 import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
-import BuyNowModal from "../../components/buyNowModel/BuyNowModel";
-import { Timestamp, addDoc, collection } from 'firebase/firestore';
+import { Timestamp, addDoc, collection } from "firebase/firestore";
 import { fireDB } from "../../firebase/FirebaseConfig";
-import { Navigate } from "react-router-dom";
-
+import BuyNowModal from "../../components/buyNowModel/BuyNowModel";
+import { Navigate } from "react-router";
 
 const CartPage = () => {
     const cartItems = useSelector((state) => state.cart);
@@ -38,12 +37,10 @@ const CartPage = () => {
         localStorage.setItem('cart', JSON.stringify(cartItems));
     }, [cartItems])
 
-    // buy now function
+    // user
+    const user = JSON.parse(localStorage.getItem('users'))
 
-    //user
-    const user = JSON.parse(localStorage.getItem('users'));
-
-    //address info state
+    // Buy Now Function
     const [addressInfo, setAddressInfo] = useState({
         name: "",
         address: "",
@@ -60,7 +57,6 @@ const CartPage = () => {
         )
     });
 
-    //buy now function
     const buyNowFunction = () => {
         // validation 
         if (addressInfo.name === "" || addressInfo.address === "" || addressInfo.pincode === "" || addressInfo.mobileNumber === "") {
@@ -99,10 +95,9 @@ const CartPage = () => {
         }
 
     }
-
     return (
         <Layout>
-            <div className="container mx-auto px-4 max-w-7xl px-2 lg:px-0">
+            <div className="container mx-auto px-4 max-w-7xl lg:px-0">
                 <div className="mx-auto max-w-2xl py-8 lg:max-w-7xl">
                     <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                         Shopping Cart
@@ -211,18 +206,13 @@ const CartPage = () => {
                                 </dl>
                                 <div className="px-2 pb-4 font-medium text-green-700">
                                     <div className="flex gap-4 mb-6">
-                                        {user ?
-                                         <BuyNowModal
+                                        {user
+                                            ? <BuyNowModal
                                                 addressInfo={addressInfo}
                                                 setAddressInfo={setAddressInfo}
                                                 buyNowFunction={buyNowFunction}
-                                            />
-
-                                         :
-
-                                         <Navigate to={'/login'}/>
-  
-                                    }
+                                            /> : <Navigate to={'/login'}/>
+                                        }
                                     </div>
                                 </div>
                             </div>
